@@ -1,3 +1,10 @@
+[![Build Status](https://travis-ci.org/Lolobstant/un-redux.svg?branch=master)](https://travis-ci.org/Lolobstant/un-redux)
+
+[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
+[npm]: https://www.npmjs.org/package/npm-package
+
+[![Coverage Status](https://coveralls.io/repos/github/Lolobstant/un-redux/badge.svg)](https://coveralls.io/github/Lolobstant/un-redux)
+
 # un-redux
 
 [![Travis][build-badge]][build]
@@ -106,10 +113,3 @@ Connects a React component to a un-redux state.
 `mapStateToProps(state) > props`
 
 `mapDispatchToProps(dispatch) > props`
-
-[![Build Status](https://travis-ci.org/Lolobstant/un-redux.svg?branch=master)](https://travis-ci.org/Lolobstant/un-redux)
-
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
-
-[![Coverage Status](https://coveralls.io/repos/github/Lolobstant/un-redux/badge.svg)](https://coveralls.io/github/Lolobstant/un-redux)
