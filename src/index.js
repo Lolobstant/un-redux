@@ -78,7 +78,7 @@ export default class Provider extends React.Component {
   }
 }
 
-const connect = (mapStateToProps, mapDispatchToProps) => children => () => (
+const connect = (mapStateToProps, mapDispatchToProps) => Children => () => (
   <Context.Consumer>
     {({ state, dispatch }) => {
       const stateToProps =
@@ -88,7 +88,7 @@ const connect = (mapStateToProps, mapDispatchToProps) => children => () => (
           ? mapDispatchToProps(dispatch)
           : {};
       const props = { ...stateToProps, ...dispatchToProps };
-      return children(props);
+      return <Children {...props} />;
     }}
   </Context.Consumer>
 );

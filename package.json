@@ -1,6 +1,6 @@
 {
   "name": "un-redux",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "A lite Redux implementation using new React Context API",
   "main": "lib/index.js",
   "module": "es/index.js",
