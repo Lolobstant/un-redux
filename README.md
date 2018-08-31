@@ -70,7 +70,9 @@ const ExampleConnected = connect(
 )(Example);
 
 render(
-  <Provider reducer={rootReducer} init={{}} />,
+  <Provider reducer={rootReducer} init={{}}>
+    <ExampleConnected />
+  </Provider>,
   document.querySelector('#demo')
 );
 ```
