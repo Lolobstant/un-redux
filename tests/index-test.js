@@ -82,9 +82,15 @@ describe('connect', () => {
       {
         element: function element(props) {
           expect(props).toExist();
-          const { propOne, propTwo, act1 } = props;
+          const { propOne, propTwo, act1, ownPropOne, ownPropTwo } = props;
           expect(propOne).toExist();
           expect(propTwo).toExist();
+          expect(ownPropOne).toExist();
+          expect(ownPropTwo).toExist();
+          expect(propOne).toEqual('state.one');
+          expect(propTwo).toEqual('state.two');
+          expect(ownPropOne).toEqual('prop.one');
+          expect(ownPropTwo).toEqual('prop.two');
           expect(act1).toExist();
           expect(act1).toThrow('Wrap the Consumer in the <Provider> element');
           return (
@@ -94,15 +100,25 @@ describe('connect', () => {
             </div>
           );
         },
-        mapStateToProps: expect.createSpy().andCall(state => {
+        mapStateToProps: expect.createSpy().andCall((state, ownProp) => {
           expect(state).toExist();
+          expect(ownProp).toExist();
+          expect(ownProp).toEqual({
+            ownPropOne: 'prop.one',
+            ownPropTwo: 'prop.two',
+          });
           return {
             propOne: 'state.one',
             propTwo: 'state.two',
           };
         }),
-        mapDispatchToProps: expect.createSpy().andCall(dispatch => {
+        mapDispatchToProps: expect.createSpy().andCall((dispatch, ownProp) => {
           expect(dispatch).toExist();
+          expect(ownProp).toExist();
+          expect(ownProp).toEqual({
+            ownPropOne: 'prop.one',
+            ownPropTwo: 'prop.two',
+          });
           expect(typeof dispatch).toBe('function');
           return {
             act1: () => dispatch('act1'),
@@ -115,11 +131,13 @@ describe('connect', () => {
     ];
 
     cases.map(el => {
-      const connected = connect(
+      const Connected = connect(
         el.mapStateToProps,
         el.mapDispatchToProps
       )(el.element);
-      const testRenderer = TestRenderer.create(connected());
+      const testRenderer = TestRenderer.create(
+        <Connected ownPropOne="prop.one" ownPropTwo="prop.two" />
+      );
 
       if (el.mapStateToProps) expect(el.mapStateToProps).toHaveBeenCalled();
       if (el.mapDispatchToProps)

@@ -103,6 +103,6 @@ Used in the same way as Redux combineReducers:
 
 Connects a React component to a un-redux state.
 
-`mapStateToProps(state) > props`
+`mapStateToProps(state[, ownProp]) > props`
 
-`mapDispatchToProps(dispatch) > props`
+`mapDispatchToProps(dispatch[, ownProp]) > props`

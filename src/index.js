@@ -78,17 +78,22 @@ export default class Provider extends React.Component {
   }
 }
 
-const connect = (mapStateToProps, mapDispatchToProps) => Children => () => (
+const connect = (
+  mapStateToProps,
+  mapDispatchToProps
+) => Component => ownProp => (
   <Context.Consumer>
     {({ state, dispatch }) => {
       const stateToProps =
-        typeof mapStateToProps === 'function' ? mapStateToProps(state) : {};
+        typeof mapStateToProps === 'function'
+          ? mapStateToProps(state, ownProp)
+          : {};
       const dispatchToProps =
         typeof mapDispatchToProps === 'function'
-          ? mapDispatchToProps(dispatch)
+          ? mapDispatchToProps(dispatch, ownProp)
           : {};
-      const props = { ...stateToProps, ...dispatchToProps };
-      return <Children {...props} />;
+      const props = { ...stateToProps, ...dispatchToProps, ...ownProp };
+      return <Component {...props} />;
     }}
   </Context.Consumer>
 );
