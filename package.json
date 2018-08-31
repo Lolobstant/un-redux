@@ -1,0 +1,74 @@
+{
+  "name": "un-redux",
+  "version": "1.0.0",
+  "description": "A lite Redux implementation using new React Context API",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module && nwb clean-demo",
+    "prepublishOnly": "npm run build",
+    "start": "nwb serve-react-demo",
+    "test": "nwb test-react",
+    "test:coverage": "nwb test-react --coverage",
+    "test:watch": "nwb test-react --server",
+    "lint": "eslint ./src",
+    "lint:fix": "eslint . --fix",
+    "precommit": "pretty-quick --staged"
+  },
+  "dependencies": {
+    "flyd": "^0.2.8"
+  },
+  "peerDependencies": {
+    "react": "16.x",
+    "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
+    "nwb": "0.23.x",
+    "prettier": "^1.14.2",
+    "pretty-quick": "^1.6.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-test-renderer": "^16.4.2"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "author": "Laurent Pouyet",
+  "homepage": "https://github.com/Lolobstant/un-redux#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lolobstant/un-redux.git"
+  },
+  "keywords": [
+    "react-component",
+    "react",
+    "redux",
+    "context"
+  ],
+  "directories": {
+    "test": "tests"
+  },
+  "bugs": {
+    "url": "https://github.com/Lolobstant/un-redux/issues"
+  }
+}

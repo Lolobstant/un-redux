@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "prettier/react"
+  ],
+  "plugins": ["react", "prettier"],
+  "env": {
+    "mocha": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
+  }
+}
