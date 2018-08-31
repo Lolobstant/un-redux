@@ -1,15 +1,10 @@
+# un-redux
+
 [![Build Status](https://travis-ci.org/Lolobstant/un-redux.svg?branch=master)](https://travis-ci.org/Lolobstant/un-redux)
+[![Coverage Status](https://coveralls.io/repos/github/Lolobstant/un-redux/badge.svg)](https://coveralls.io/github/Lolobstant/un-redux)
 
 [npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
 [npm]: https://www.npmjs.org/package/npm-package
-
-[![Coverage Status](https://coveralls.io/repos/github/Lolobstant/un-redux/badge.svg)](https://coveralls.io/github/Lolobstant/un-redux)
-
-# un-redux
-
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
 
 A lite implementation of Redux using React new Context API.
 The flavor of redux in a very small package, with the aim to help to change your Redux application to use React Context API, or in opposite use the full capability of redux with as little change to your code as possible.
