@@ -4,7 +4,8 @@
 [![npm package][npm-badge]][npm]
 [![Coveralls][coveralls-badge]][coveralls]
 
-A lite implementation of Redux using React new Context API
+A lite implementation of Redux using React new Context API.
+The flavor of redux in a very small package, with the aim to help to change your Redux application to use React Context API, or in opposite use the full capability of redux with as little change to your code as possible.
 
 ### Getting Started
 
@@ -100,9 +101,9 @@ Used in the same way as Redux combineReducers:
 
 Connects a React component to a un-redux state.
 
-mapStateToProps(state) > props
+`mapStateToProps(state) > props`
 
-mapDispatchToProps(dispatch) > props
+`mapDispatchToProps(dispatch) > props`
 
 [build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
 [build]: https://travis-ci.org/user/repo
